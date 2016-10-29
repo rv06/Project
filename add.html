@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="fault management system">
+        <title>Fault Management System</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/combinedatetime.js" type="text/javascript"></script>
+    </head>
+    
+    <body>
+        
+        <!-- NAVIGATION BAR -->
+        
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Fault Management System</a>
+                </div>
+                <div id="mynavbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html"><span class="glyphicon glyphicon-eye-open"></span> View Entries</a></li>
+                        <li class="active"><a href="add.html"><span class="glyphicon glyphicon-plus"></span> Add Fault Entry</a></li>
+                        <li><a href="edit.html"><span class="glyphicon glyphicon-pencil"></span> Edit List Entries</a></li>
+                    </ul>
+                </div>
+            </div>        
+        </nav>
+        
+        <!-- CONTENT -->
+        
+        <div class="container" id="first">
+            <h2 align="center">Add Fault Entry</h2>
+            <form role="form" class="form-horizontal" action="index.html">
+                
+                <!-- Select Division, Control Section, SSE -->
+                <div class="form-group has-success has-feedback"> 
+                    
+                    <!-- Select Division -->
+                    <div class="col-md-4">
+
+                            <label for="division">Division:</label>
+                            <!-- input goes here -->
+                            <select class="form-control" id="division" placeholder="Select Divison" required>
+                                <option value="" selected hidden>Select Division</option>
+                                <option value="JBP">JBP</option>
+                                <option value="BPL">BPL</option>
+                                <option value="KTA">KOTA</option>
+                                <option>Other</option>
+                            </select>        
+
+                    </div>
+                
+                    <!-- Select Control Section -->
+                    <div class="col-md-4">  
+
+                            <label for="control_section">Control Section: </label>
+                            <select class="form-control" id="control_section" required>
+                                <!--Inputs go here -->
+                            </select>
+
+                     </div>
+
+                    <!-- Select SSE Section -->
+                    <div class="col-md-4">    
+
+                            <label for="sse_section">SSE Section: </label>
+                            <select class="form-control" id="sse_section" required>
+                                <!--Inputs go here -->
+                            </select>
+
+                    </div>
+                    
+                </div>
+                
+                
+                
+                <!-- Select Stations, Fault Location -->
+                <div class="form-group has-success has-feedback"> 
+                    
+                    <!-- Select Station 1 -->
+                    <div class="col-md-4">
+
+                            <label for="station1">Station #1: </label>
+                            <select class="form-control" id="station1" required>
+                            <!--Inputs go here -->
+                            </select>      
+
+                    </div>
+                    
+                    <!-- Select Station 2 -->
+                    <div class="col-md-4">
+
+                            <label for="station2">Station #2: </label>
+                            <select class="form-control" id="station2" required>
+                            <!--Inputs go here -->
+                            </select>      
+
+                    </div>
+                
+                    <!-- Select Fault Location -->
+                    <div class="col-md-4">  
+
+                            <label for="location">Fault Location: </label>
+                            <select class="form-control" id="location" required>
+                                <!--Inputs go here -->
+                            </select>
+
+                    </div>
+                </div>    
+                
+                <!-- Select System, Sub System -->
+                <div class="form-group has-success has-feedback"> 
+                    
+                    <!-- Select System -->
+                    <div class="col-md-6">
+
+                            <label for="system">System Failed: </label>
+                            <select class="form-control" id="system" required>
+                                <!--Inputs go here -->
+                            </select>    
+                    </div>
+                
+                    <!-- Select Sub System -->
+                    <div class="col-md-6">  
+
+                            <label for="sub-system">Sub System Failed: </label>
+                            <select class="form-control" id="sub-system" required>
+                                <!--Inputs go here -->
+                            </select>
+                    </div>
+
+                </div>
+                
+                <!-- Select Asset -->
+                <div class="form-group has-success has-feedback">                     
+                    <div class="col-md-12">
+
+                            <label for="asset">Asset Failed: </label>
+                            <select class="form-control" id="asset" required>
+                                <!--Inputs go here -->
+                            </select>   
+
+                    </div>
+                </div>
+                
+                <!-- Select Root Cause -->
+                <div class="form-group has-success has-feedback">                     
+                    <div class="col-md-12">
+
+                            <label for="rootcause">Root Cause: </label>
+                            <select class="form-control" id="rootcause" required>
+                                <!--Inputs go here -->
+                            </select> 
+
+                    </div>
+                </div>
+                
+                <!-- Select Responsible Department -->
+                <div class="form-group has-success has-feedback">                     
+                    <div class="col-md-12">
+
+                            <label for="department">Responsible Department: </label>
+                            <select class="form-control" id="department" required>
+                                <!--Inputs go here -->
+                            </select>
+
+                    </div>
+                </div>
+
+                <!-- Select In Date and In Time -->
+                <div class="form-group has-success has-feedback">
+                    <div class="col-md-3">
+
+                            <label for="inDate">In Date</label>
+                            <input type="date" class="form-control" id="inDate">
+
+                    </div>
+                     
+                    <div class="col-md-3">
+
+                            <label for="inTime">In Time</label>
+                            <input type="time" class="form-control" id="inTime">
+
+                    </div>
+                     
+                    <div class="col-md-3">
+
+                            <label for="rightDate">Right Date</label>
+                            <input type="date" class="form-control" id="rightDate">
+
+                    </div>
+                     
+                    <div class="col-md-3">
+
+                            <label for="rightTime">Right Time</label>
+                            <input type="time" class="form-control" id="rightTime">
+                    </div>
+                </div>
+
+                
+                <!-- Enter Remarks -->
+                <div class="form-group has-success has-feedback">                     
+                    <div class="col-md-12">
+
+                            <label for="remarks">Remarks:</label>
+                            <textarea class="form-control" rows="5" id="remarks" placeholder="Enter Remarks"></textarea>  
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block btn-lg" onclick="combineDateTime()" >Submit</button>
+        
+            </form>
+        </div>
+        <p id="log">
+        </p>
+    </body>
+</html>
